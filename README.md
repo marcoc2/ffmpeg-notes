@@ -21,3 +21,6 @@ This example will skip the first 30 seconds of the input and create a 3 second o
 **$ ffmpeg -y -ss 30 -t 3 -i input.flv -vf fps=10,scale=320:-1:flags=lanczos,palettegen palette.png**
 ### Output the GIF using the palette:
 **$ ffmpeg -ss 30 -t 3 -i input.flv -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output.gif**
+
+### Other option
+**$ ffmpeg -i video.avi video.gif -hide_banner**
