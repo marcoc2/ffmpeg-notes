@@ -14,6 +14,9 @@ _Comments: Seems not to work if you put the audio file as the second input param
 ## Concatenate video files
 **$ ffmpeg -f concat -safe 0 -i v_input1.vid -i v_input2.vid -c copy v_output.vid**
 
+## Convert ogv to mp4
+**$ ffmpeg -i input.ogv -c:v libx264 -preset veryslow -crf 22 -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 output.mp4**
+
 ## Convert video to gif
 This example will skip the first 30 seconds of the input and create a 3 second output. It will scale the output to be 320 pixels wide and automatically determine the height while preserving the aspect ratio. The palettegen and paletteuse filters will generate and use a custom palette generated from your source. (source: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality)
 
