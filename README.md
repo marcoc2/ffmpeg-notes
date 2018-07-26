@@ -19,6 +19,7 @@ _Comments: Seems not to work if you put the audio file as the second input param
 **$ ffmpeg -i input.mp4 -filter:v "crop=80:60:200:100" -c:a copy output.mp4**
 
 _80:60 - Crop window size in pixes_
+
 _200:100 - Starting from x=200, y=100 (on original image)_
 
 ## Convert ogv to mp4
