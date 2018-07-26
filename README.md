@@ -6,6 +6,7 @@ FFmpeg command list
 
 ## Insert audio on video
 **$ ffmpeg -i a_input.aud -i v_input.vid -codec copy -shortest v_output.vid**
+
 _Comments: Seems not to work if you put the audio file as the second input parameter_
 
 ## Remove audio from video
@@ -13,6 +14,12 @@ _Comments: Seems not to work if you put the audio file as the second input param
 
 ## Concatenate video files
 **$ ffmpeg -f concat -safe 0 -i v_input1.vid -i v_input2.vid -c copy v_output.vid**
+
+## Crop video (in frame dimension)
+**$ ffmpeg -i input.mp4 -filter:v "crop=80:60:200:100" -c:a copy output.mp4**
+
+_80:60 - Crop window size in pixes_
+_200:100 - Starting from x=200, y=100 (on original image)_
 
 ## Convert ogv to mp4
 **$ ffmpeg -i input.ogv -c:v libx264 -preset veryslow -crf 22 -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 output.mp4**
