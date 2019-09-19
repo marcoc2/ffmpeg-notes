@@ -22,6 +22,13 @@ _80:60 - Crop window size in pixes_
 
 _200:100 - Starting from x=200, y=100 (on original image)_
 
+## Cut video (in lenght)
+**$ ffmpeg -i input.vid -ss 00:00:03 -t 00:00:08 -async 1 output.vid**
+
+_ss - Video start time_
+
+_t - Lenght of the part to be cut_
+
 ## Convert ogv to mp4
 **$ ffmpeg -i input.ogv -c:v libx264 -preset veryslow -crf 22 -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 output.mp4**
 
