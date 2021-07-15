@@ -12,6 +12,10 @@ _Comments: Seems not to work if you put the audio file as the second input param
 ## Remove audio from video
 **$ ffmpeg -i input.vid -c copy -an output_noaudio.vid**
 
+## Extract audio from video
+**$ ffmpeg -i input.vid -c copy -vn -acodec copy audio.aac**
+
+
 ## Concatenate video files
 **$ ffmpeg -f concat -safe 0 -i v_input1.vid -i v_input2.vid -c copy v_output.vid**
 
