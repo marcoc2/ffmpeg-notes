@@ -33,6 +33,13 @@ _ss - Video start time_
 
 _t - Lenght of the part to be cut_
 
+## Repeat video with reverted version (vai e volta)
+### Without audio
+**$ ffmpeg -i input.mp4 -filter_complex "[0:v]reverse,fifo[r];[0:v][r] concat=n=2:v=1 [v]" -map "[v]" output.mp4**
+
+### With audio
+**$ ffmpeg -i input.mp4 -filter_complex "[0:v]reverse,fifo[r];[0:v][0:a][r] [0:a]concat=n=2:v=1:a=1 [v] [a]" -map "[v]" -map "[a]" output.mp4**
+
 ## Convert ogv to mp4
 **$ ffmpeg -i input.ogv -c:v libx264 -preset veryslow -crf 22 -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 output.mp4**
 
