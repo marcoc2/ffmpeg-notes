@@ -44,7 +44,9 @@ _t - Lenght of the part to be cut_
 **$ ffmpeg -i input.ogv -c:v libx264 -preset veryslow -crf 22 -c:a libmp3lame -qscale:a 2 -ac 2 -ar 44100 output.mp4**
 
 ## Convert avi to mkv
-**$ ffmpeg -fflags +genpts -i input.avi -c:v copy -c:a copy output.mkv
+**$ ffmpeg -fflags +genpts -i input.avi -c:v copy -c:a copy output.mkv**
+
+_Tirar "-c:v copy" e "-c:a copy" para refazer o enconding_
 
 ## Convert video to gif
 This example will skip the first 30 seconds of the input and create a 3 second output. It will scale the output to be 320 pixels wide and automatically determine the height while preserving the aspect ratio. The palettegen and paletteuse filters will generate and use a custom palette generated from your source. (source: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality)
