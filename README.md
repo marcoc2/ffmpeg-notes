@@ -4,6 +4,9 @@ FFmpeg command list
 ".vid" = Any video format supported
 ".aud" = Any audio format supported
 
+## Resize
+ffmpeg -i input.vid -vf scale=$w:$h -vf format=yuv420p output.vid
+
 ## Insert audio on video
 **$ ffmpeg -i a_input.aud -i v_input.vid -codec copy -shortest v_output.vid**
 
