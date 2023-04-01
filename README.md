@@ -51,6 +51,10 @@ _t - Lenght of the part to be cut_
 
 _Tirar "-c:v copy" e "-c:a copy" para refazer o enconding_
 
+## MP3 to MP4 with Image
+
+**$ ffmpeg -loop 1 -i image.png -i audio.mp3 -c:a copy -c:v libx264 -shortest video.mp4**
+
 ## Convert video to gif
 This example will skip the first 30 seconds of the input and create a 3 second output. It will scale the output to be 320 pixels wide and automatically determine the height while preserving the aspect ratio. The palettegen and paletteuse filters will generate and use a custom palette generated from your source. (source: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality)
 
